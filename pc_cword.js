@@ -7,8 +7,8 @@
 
    Crossword Puzzle Script
    
-   Author: 
-   Date:   
+   Author: Anthony Arias
+   Date:   3-26-19
    
    Global Variables
    ================
@@ -49,11 +49,32 @@
 
 */
 
+var allLetters;
+
+var currentLetter;
+
+var wordLetters;
+
+var acrossClue;
+
+var downClue;
+
+var typeDirection;
+
+window.onload = init;
+
+//this Initializes the puzzle, setting up the event handlers and the variable values
+function init() {
+      allLetters = document.querySelectorAll("table#crossword span");
+      currentLetter = allLetters[0];
+      var acrossID = currentLetter.dataset.clueA;
+      var downID = currentLetter.dataset.clueD
+      acrossClue = document.getElementById(currentLetter.dataset.clueA);
+      downClue = document.getElementById(currentLetter.dataset.clueD);
+}
 
 
 
-
-   
 
 
 
@@ -62,5 +83,5 @@
 /*====================================================*/
 
 function getChar(keyNum) {
-   return String.fromCharCode(keyNum);
+      return String.fromCharCode(keyNum);
 }
