@@ -71,6 +71,47 @@ function init() {
       var downID = currentLetter.dataset.clueD
       acrossClue = document.getElementById(currentLetter.dataset.clueA);
       downClue = document.getElementById(currentLetter.dataset.clueD);
+      acrossClue = document.getElementById("acroosID");
+      downClue = document.getElementById("downID");
+
+      function formatPuzzle(currentLetter) {
+            for (var i = 0; i < allLetters.length; i++) {
+                  allLetters[i].style.cursor = "pointer";
+
+            }
+      }
+
+}
+
+// This formats the colors of the crossword table cells and the clues in the clues list based on the letter that is selected by user
+function formatPuzzle(puzzleLetter) {
+      currentLetter = puzzleLetter;
+      for (var i = 0; i < allLetters.length; i++) {
+            allLetters[i].style.backgroundColor = "";
+      }
+      acrossClue.style.color = "";
+      downClue.style.color = "";
+
+      if (currentLetter.dataset.clueA !== undefined) {
+            acrossClue = document.getElementById("currentLetter.dataset.clueA");
+            acrossClue[i].style.color = "blue";
+            wordLetters = document.querySelectorAll("[data-clue-a = " + currentLetter.dataset.clueA + "]");
+            wordLetters[i].style.backgroundColor = "rgb(231, 231, 255)";
+      }
+
+      if (currentLetter.dataset.clueD !== undefined) {
+            acrossClue = document.getElementById("currentLetter.dataset.clueD");
+            acrossClue[i].style.color = "red";
+            wordLetters = document.querySelectorAll("[data-clue-d = " + currentLetter.dataset.clueD + "]");
+            wordLetters[i].style.backgroundColor = "rgb(255, 231, 231)";
+      }
+
+      if (typeDirection === "right") {
+            currentLetter.style.backgroundColor = "rgb(191, 191, 255)";
+      } else {
+            currentLetter.style.backgroundColor = "rgb(255, 191, 191)";
+      }
+
 }
 
 
